@@ -1,8 +1,18 @@
-//
-//  WebViewController.swift
-//  Animal Infos
-//
-//  Created by Nukte Ozkilinc on 16.07.2023.
-//
+import UIKit
+import WebKit
 
-import Foundation
+
+class WebViewController: UIViewController {
+    
+    @IBOutlet weak var webView: WKWebView!
+    var url : String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let urlString = url{
+            webView.load(URLRequest(url: URL(string: urlString)!))
+        }
+        
+    }
+}
